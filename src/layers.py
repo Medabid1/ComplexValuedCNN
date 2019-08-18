@@ -74,3 +74,18 @@ class ComplexLinear(nn.Module):
         out = CPLX(r, i)
 
         return out
+
+class ComplexAvgPool2d(nn.Module):
+    def __init__(self, kernel_size, stride=None, padding=0, 
+                ceil_mode=False, count_include_pad=True, divisor_override=None):
+
+        self.rAvg = nn.AvgPool2d(kernel_size, stride=stride, padding=padding, 
+                                ceil_mode=ceil_mode, count_include_pad=count_include_pad, 
+                                divisor_override=divisor_override )
+        
+        self.iAvg = nn.AvgPool2d(kernel_size, stride=stride, padding=padding, 
+                                ceil_mode=ceil_mode, count_include_pad=count_include_pad, 
+                                divisor_override=divisor_override )
+
+    def forward(self, x):
+        return CPLX(self.rAvg(x.r), self.iAvg(x.i))
