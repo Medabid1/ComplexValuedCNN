@@ -1,5 +1,5 @@
 import torch 
-import numba as np 
+import numpy as np 
 
 
 class CPLX:

@@ -2,7 +2,7 @@ import torch
 import troch.nn as nn 
 import numpy as np 
 
-from complex import CPLX
+from src.complex import CPLX
 
 
 
@@ -20,4 +20,5 @@ class CReLU(nn.Module):
 
         out = CPLX(x.r * mask, x.i * mask)
 
-        return out 
+        return out
+
