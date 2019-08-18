@@ -15,7 +15,6 @@ class CPLX:
         return self.r.size(), self.i.size()
 
     def flatten(self):
-        self.r = torch.flatten(x.r)
-        self.i = torch.flatten(x.i)
-    
+        self.r = torch.flatten(self.r)
+        self.i = torch.flatten(self.i)
     
