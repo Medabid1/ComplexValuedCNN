@@ -44,3 +44,16 @@ class ComplexConvTranspose2d(nn.Module):
                                 stride=stride, padding=padding, 
                                 dilation=dilation, groups=groups, 
                                 bias=bias)
+
+        self.iConvTranspose2d = nn.ConvTranspose2d(in_channels, out_channels, kernel_size, 
+                                stride=stride, padding=padding, 
+                                dilation=dilation, groups=groups, 
+                                bias=bias)
+
+    def forward(self, x):
+        r = self.rConvTranspose2d(x.r) - self.iConvTranspose2d(x.i)
+        i = self.rConvTranspose2d(x.i) + self.iConvTranspose2d(x.r)
+
+        out = CPLX(r, i)
+
+        return out
