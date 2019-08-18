@@ -57,3 +57,20 @@ class ComplexConvTranspose2d(nn.Module):
         out = CPLX(r, i)
 
         return out
+
+
+class ComplexLinear(nn.Module):
+    def __init__(self, in_features, out_features, bias=True  ):
+        super().__init__()
+
+        self.rLinear = nn.Linear(in_features, out_features, bias=bias)
+
+        self.iLinear = nn.Linear(in_features, out_features, bias=bias)
+    
+    def forward(self, x):
+        r = self.rLinear(x.r) - self.iLinear(x.i)
+        i = self.rLinear(x.i) + self.iLinear(x.r)
+
+        out = CPLX(r, i)
+
+        return out
