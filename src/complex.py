@@ -18,3 +18,6 @@ class CPLX:
         self.r = torch.flatten(self.r)
         self.i = torch.flatten(self.i)
     
+    def to_complex(self):
+        x = self.r.data.numpy() + self.i.data.numpy() * 1j
+        return x

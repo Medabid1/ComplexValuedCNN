@@ -11,8 +11,11 @@ def concat(axis=-1, *args):
 
     return CPLX(x_r, x_i)
 
-def loss(labels, predictions, loss_function):
+def loss(labels, predictions, loss_function, use_magnitude=True):
     if isinstance(labels, CPLX):
         return  loss_function(labels.r, predictions.r) + loss_function(labels.i, predictions.i)
-    else : 
-        raise 'Labels should be CPLX type'
+    elif use_magnitude:
+        return loss_function(labels, predictions.magnitude())
+    
+
+        
