@@ -14,7 +14,8 @@ Complex CNN in Pytorch, implementation of the paper Deep Complex Networks : http
 - [x] CRelu
 
 ## Usage :
-1. Define your Complex input using the class CPLX by passing the real and imaginary  part to it. \\
+1. Define your Complex input using the class CPLX.
+
     `x = CPLX(real_part, imaginary_part)`
 2. Build your model using src modules.
 3. Use the loss function in `utils.py` to train your model. if the labels are real valued, set `use_magnitude = True`
