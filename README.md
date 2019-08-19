@@ -4,7 +4,7 @@ Complex CNN in Pytorch, implementation of the paper Deep Complex Networks : http
 
 
 ### Modules implemeted : 
-- [x] Complex Conv2d ![conv](img/nn.jpg?raw=true "ComplexCnn")
+- [x] Complex Conv2d ![conv](https://raw.githubusercontent.com/Medabid1/ComplexValuedCNN/master/img/nn.png?token=AHFNLWOQ7J6TJR6IXL7AQFS5MQO5M)
 - [x] Complex ConvTranspose2d
 - [x] Complex AvgPool2d
 - [x] Complex Linear
